@@ -1,0 +1,10 @@
+Dockerfile
+*.dockerfile
+*.vscode/
+*reports
+*.gitlab-ci.yml
+*.github/
+README.md
+*.md
+.git/
+.gitignore
