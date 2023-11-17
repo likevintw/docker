@@ -16,9 +16,15 @@ function template() {
     kevin/cicd-demo
 }
 
+function run_ubuntu() {
+    docker run -dit \
+    --name mysql_mock\
+    ubuntu:18.04 /bin/bash
+}
+
 function run_mysql() {
     docker run \
-    --name test_redis -d \
+    --name test_redis -dit \
     --rm \
     -p 3306:3306 \
     --cpus='0.5' \
@@ -26,6 +32,12 @@ function run_mysql() {
     -e MYSQL_DATABASE=products \
     -e MYSQL_ROOT_PASSWORD=testpassword \
     mysql:8.2.0
+}
+
+function run_gitlib_runner() {
+    docker run -dit \
+      --rm \
+      gitlab/gitlab-runner:latest
 }
 
 function run_backend_service(){
