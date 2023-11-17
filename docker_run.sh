@@ -18,15 +18,13 @@ function template() {
 
 function run_mysql() {
     docker run \
-    --name test_redis \
-    -d --rm \
+    --name test_redis -d \
+    --rm \
     -p 3306:3306 \
     --cpus='0.5' \
     --memory='2gb' \
     -e MYSQL_DATABASE=products \
     -e MYSQL_ROOT_PASSWORD=testpassword \
-    -e MYSQL_USER=root \
-    -e MYSQL_PASSWORD=testpassword \
     mysql:8.2.0
 }
 
