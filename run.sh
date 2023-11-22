@@ -34,7 +34,7 @@ function run_mysql() {
     mysql:8.2.0
 }
 
-function run_redis_20231122() {
+function run_redis() {
     docker run \
     --name redis_demo -dit \
     --rm \
