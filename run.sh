@@ -24,7 +24,7 @@ function run_ubuntu() {
 
 function run_mysql() {
     docker run \
-    --name test_redis -dit \
+    --name mysql -dit \
     --rm \
     -p 3306:3306 \
     --cpus='0.5' \
@@ -32,6 +32,17 @@ function run_mysql() {
     -e MYSQL_DATABASE=products \
     -e MYSQL_ROOT_PASSWORD=testpassword \
     mysql:8.2.0
+}
+
+function run_redis_20231122() {
+    docker run \
+    --name redis_demo -dit \
+    --rm \
+    -p 6379:6379 \
+    --cpus='0.5' \
+    --memory='2gb' \
+    redis:7.2.3 \
+    --requirepass $REDIS_PASSWORD
 }
 
 function run_gitlib_runner() {
