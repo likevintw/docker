@@ -51,7 +51,8 @@ function run_redis() {
     --cpus='0.5' \
     --memory='2gb' \
     redis:7.2.3 \
-    --requirepass $REDIS_PASSWORD
+    --requirepass  "1qaz2wsx"
+    --notify-keyspace-events "KEA"
 }
 
 function run_gitlib_runner() {
