@@ -1,6 +1,15 @@
 
 exit 0
 
+function run_nginx(){
+    uwsgi  --master \
+        --threads 4 \
+        --enable-threads \
+        --wsgi-file=restful.py  \
+        --shared-socket 0.0.0.0:443 \
+        --https =0,certificate.crt,private.key
+}
+
 function template() {
     run docker \
     --name test_redis \
